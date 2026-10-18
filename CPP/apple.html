@@ -1,12 +1,62 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Next Level</title>
-  </head>
-  <body>
-    <h1>Next Level-下一关</h1>
-    <h1>第9关</h1>
-    <p>开发中...</p>
-  </body>
-</html>
+<!DOCTYPE html>
+<head>
+	<meta charset='gbk'>
+	<title>Next Level</title>
+</head>
+<body>
+	<h1>Next Level-下一关</h1>
+	<h1>第9关</h1>
+	<span id="apples">你有 0 苹果。</span>
+  	<span id="hardcap"></span>
+	<br>
+	<br>
+	<button onclick=update()>苹果+1</button>
+	<button onclick=check() id="nextlevel" disabled>前往下一关（达到 100 苹果）</button>
+</body>
+<script>
+	var appleCount = 0;
+	function update()
+	{
+		if (typeof(appleCount) != "number")
+		{
+			appleCount = "f(x)=f(x-1)+f(x-2),f(1)=f(2)=1";
+		}
+		else if (appleCount <= 98)
+		{
+			appleCount += 1;
+		}
+		else if (98 <= appleCount && appleCount < 99)
+		{
+			appleCount = 99;
+		}
+		document.getElementById("apples").innerHTML = '你有 ' + String(appleCount) + ' 苹果。';
+		if (appleCount >= 99)
+		{
+			document.getElementById("hardcap").innerHTML = `（苹果数量达到 99 时将会被<del>软</del>硬上限）`;
+		}
+		else
+		{
+			document.getElementById("hardcap").innerHTML = '';
+		}
+		if (appleCount < 100)
+		{
+			document.getElementById("nextlevel").disabled = 1;
+		}
+		else
+		{
+			document.getElementById("nextlevel").disabled = 0;
+		}
+	}
+	function check()
+	{
+		if (appleCount == 999999)
+		if (appleCount < 100)
+		{
+			window.alert('你的苹果数量不够！')
+		}
+		else
+		{
+			window.location.assign("congratulation.html");
+		}
+	}
+</script>

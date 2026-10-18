@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+	<meta charset='gbk'>
+	<title>Next Level</title>
+	<script>
+		function nextlevel()
+		{
+			var a = new Date();
+			if (document.getElementById("pswd").value == (3648 + 6658 + 100 * a.getDate() + a.getMonth() + 1) * 1017)
+			{
+				document.getElementById("pswd").value="..\\level12qldofnrj.html";
+				document.getElementById("lvl12").innerHTML="lvl12";
+			}
+			else
+			{
+				document.getElementById("hint").innerHTML="hint:0,4c3,7,9nn,12"
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Next Level-下一关</h1>
+	<h1>第11关</h1>
+	<span id="lvl12">(password1+password2+password3)*4drowssap</span>=<input id="pswd"><button onclick=nextlevel()>-></button>
+	<span id="hint"></span>
+</body>
